@@ -1,0 +1,3 @@
+[submodule "themes/Module"]
+	path = themes/Module
+	url = git@github.com:ggstuart/Module.git
