@@ -1,0 +1,18 @@
+baseURL = 'https://ggstuart.github.io/advanced-web-development'
+languageCode = 'en-us'
+theme = 'module'
+title = 'Advanced Web Development'
+
+
+[markup]
+    [markup.highlight]
+        _merge = "shallow"
+    [markup.goldmark]
+        [markup.goldmark.renderHooks]
+            [markup.goldmark.renderHooks.link]
+                enableDefault = true
+
+[params]
+    moduleName = 'Advanced Web application development'
+    moduleCode = 'CTEC3705'
+    customcss = ['colours.css', 'mdn.css']
