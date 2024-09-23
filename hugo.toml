@@ -13,6 +13,6 @@ title = 'Advanced Web Development'
                 enableDefault = true
 
 [params]
-    moduleName = 'Advanced Web application development'
+    moduleName = 'Advanced Web development'
     moduleCode = 'CTEC3705'
     customcss = ['colours.css', 'mdn.css']
