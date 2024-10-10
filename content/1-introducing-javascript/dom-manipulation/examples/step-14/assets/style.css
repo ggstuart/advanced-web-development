@@ -1,0 +1,94 @@
+:root {
+    --main-bg1: hsl(285 10% 27% / 0.9);
+    --main-bg2: hsl(285, 10%, 15%);
+    --main-bg-gradient: linear-gradient(
+        var(--main-bg1),
+        var(--main-bg2)
+    );
+    --main-font: system-ui;
+    --main-color: hsl(285, 5%, 80%);
+
+    --highlight-bg1: hsl(24, 96%, 55%);
+    --highlight-bg2: hsl(24, 96%, 45%);
+    --highlight-bg-gradient: linear-gradient(
+        var(--highlight-bg1),
+        var(--highlight-bg2)
+    );
+    --highlight-color: hsl(24, 5%, 90%);
+
+    --item-bg1: hsl(135, 14%, 48%);
+    --item-bg2: hsl(135, 14%, 38%);
+    --item-bg-gradient: linear-gradient(
+        90deg,
+        var(--item-bg1),
+        var(--item-bg2)
+    );
+    --item-color: hsl(135, 5%, 90%);
+}
+
+body {
+    font-family: var(--main-font);
+    background: var(--main-bg-gradient);
+    color: var(--main-color);
+
+    margin: 0 auto;
+
+    min-height: 100dvh;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+
+    >* {
+        padding-inline: 1rem;
+    }
+}
+
+.item {
+    background: var(--item-bg-gradient);
+    color: var(--item-color);
+}
+
+.highlight {
+    background: var(--highlight-bg-gradient);
+    color: var(--highlight-color);
+}
+
+label,
+input,
+button {
+    border: none;
+    font-size: inherit;
+    padding: 0.5rem;
+    border-radius: 3px;
+}
+
+.with-button {
+    display: grid;
+    grid-template-columns: 1fr auto;
+
+    *:first-child {
+        border-radius: 3px 0 0 3px;
+    }
+
+    button:last-child {
+        border-radius: 0 3px 3px 0;
+    }
+}
+
+ul {
+    padding: 0;
+    list-style: none;
+
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+
+}
+
+input[type="checkbox"] {
+    display: none;
+}
+
+label:has(input:checked) {
+    text-decoration: line-through;
+    background: oklch(from var(--item-bg2) calc(l - .1) c h);
+}

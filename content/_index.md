@@ -1,6 +1,5 @@
 ---
-title: Advanced Web Application Development
-display_toc: true
+title: Advanced Web Development
 ---
 
 This part of the module introduces more front-end web technologies, we will explore what JavaScript can do in the browser and how to make dynamic front-end applications that interact with web APIs.

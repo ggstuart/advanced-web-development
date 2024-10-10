@@ -1,0 +1,26 @@
+:root {
+    --main-bg1: hsl(285 10% 27% / 0.9);
+    --main-bg2: hsl(285, 10%, 15%);
+    --main-bg-gradient: linear-gradient(
+        var(--main-bg1), 
+        var(--main-bg2)
+    );
+    --main-font: system-ui;
+    --main-color: hsl(285, 5%, 80%);
+}
+
+body {
+    font-family: var(--main-font);
+    background: var(--main-bg-gradient);
+    color: var(--main-color);
+
+    margin: 0 auto;
+    
+    min-height: 100dvh;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+
+    > * {
+        padding-inline: 1rem;
+    }
+}
