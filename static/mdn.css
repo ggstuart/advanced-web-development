@@ -1,0 +1,12 @@
+a[href*="developer.mozilla.org"] {
+    text-decoration: none;
+    &:hover {
+        text-decoration: underline;
+    }
+    &::after {
+        text-decoration: underline;
+        font-size: 0.9em;
+        content: "(see MDN reference)";
+        margin-left: 0.5ch;
+    }
+}
