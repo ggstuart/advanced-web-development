@@ -37,6 +37,9 @@ addForm.addEventListener('submit', ev => {
     list.append(li);
 
     deleteBtn.addEventListener('click', ev => {
-        li.remove();
+        li.classList.add('removing');
+        li.addEventListener('animationend', ev => {
+            li.remove();
+        })
     });
 });

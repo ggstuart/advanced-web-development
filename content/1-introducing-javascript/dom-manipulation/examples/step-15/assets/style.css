@@ -1,3 +1,15 @@
+@property --item-bg1 {
+    syntax: '<color>';
+    initial-value: hsl(135, 14%, 48%);
+    inherits: true;
+}
+
+@property --item-bg2 {
+    syntax: '<color>';
+    initial-value: hsl(135, 14%, 28%);
+    inherits: true;
+}
+
 :root {
     --main-bg1: hsl(285 10% 27% / 0.9);
     --main-bg2: hsl(285, 10%, 15%);
@@ -6,7 +18,7 @@
         var(--main-bg2)
     );
     --main-font: system-ui;
-    --main-color: hsl(285, 5%, 80%);
+    --main-color: hsl(285, 5%, 95%);
 
     --highlight-bg1: hsl(24, 96%, 55%);
     --highlight-bg2: hsl(24, 96%, 45%);
@@ -14,16 +26,8 @@
         var(--highlight-bg1),
         var(--highlight-bg2)
     );
-    --highlight-color: hsl(24, 5%, 90%);
-
-    --item-bg1: hsl(135, 14%, 48%);
-    --item-bg2: hsl(135, 14%, 38%);
-    --item-bg-gradient: linear-gradient(
-        90deg,
-        var(--item-bg1),
-        var(--item-bg2)
-    );
-    --item-color: hsl(135, 5%, 90%);
+    --highlight-color: hsl(24, 5%, 95%);
+    --item-color: hsl(135, 5%, 95%);
 }
 
 body {
@@ -48,8 +52,22 @@ h1 {
 }
 
 .item {
+    --item-bg-gradient: linear-gradient(
+        90deg,
+        var(--item-bg1),
+        var(--item-bg2)
+    );
     background: var(--item-bg-gradient);
     color: var(--item-color);
+    transition:
+        --item-bg1 .4s,
+        --item-bg2 .6s .2s;
+
+    &:has(input:checked) {
+        text-decoration: line-through;
+        --item-bg1: hsl(135, 14%, 28%);
+        --item-bg2: hsl(135, 14%, 18%);
+    }
 }
 
 .highlight {
@@ -87,13 +105,36 @@ ul {
     flex-direction: column;
     gap: 0.5rem;
 
+    li {
+        margin-top: -2.5rem;
+        opacity: 0;
+        animation: appear .4s forwards;
+
+        &.removing {
+            animation: disappear .4s forwards;
+        }
+    }
 }
 
 input[type="checkbox"] {
     display: none;
 }
 
-label:has(input:checked) {
-    text-decoration: line-through;
-    background: oklch(from var(--item-bg2) calc(l - .1) c h);
+@keyframes appear {
+    100% {
+        opacity: 1;
+        margin-top: 0;
+    }
+}
+
+@keyframes disappear {
+    0% {
+        opacity: 1;
+        margin-top: 0;
+    }
+
+    100% {
+        opacity: 0;
+        margin-top: -2.5rem;
+    }
 }

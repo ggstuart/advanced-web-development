@@ -501,7 +501,7 @@ We have provided the callback function as an [arrow function](https://developer.
 
 > Alternatively, we could have defined a named function like this for our event handler:
 >
->```js
+>```js {linenos=false}
 > function AddFormSubmitHandler(ev) {
 >     ev.preventDefault();
 >     if(!input.value) return;
@@ -513,11 +513,13 @@ We have provided the callback function as an [arrow function](https://developer.
 >```
 > We know this is an event handler from the name, but also because it takes an event object as its only argument.
 > With this function defined, we could have passed it into the `addEventListener` method like so.
-> ```js
+> ```js  {linenos=false}
 > addForm.addEventListener('submit', createItemSubmitHandler);
 >``` 
 > This would achieve the identical effect.
 > In this case we have chosen brevity over clarity.
+
+#### How does it work?
 
 In this case, the 'submit' event is specific to forms.
 Our event handler will be executed whenever the form is submitted.
@@ -525,11 +527,32 @@ Our event handler will be executed whenever the form is submitted.
 The first thing we do is we call the [preventDefault](https://developer.mozilla.org/en-US/docs/Web/API/Event/preventDefault) method on the event object.
 This stops the form from actually submitting its HTTP request and so prevents the page from reloading.
 
+```js {linenostart=19}
+ev.preventDefault();
+```
+
+
 We then check to see if the `<input>` element has a value.
 If it doesn't (i.e. if it is an empty string), then we return without doing anything.
 
-At this point we are able to create an `<li>` element, sets its content to the value entered by the user into the `<input>` element, and insert it into our list.
-Finally, we clear the input so the user can add another item.
+```js {linenostart=20}
+if(!input.value) return;
+```
+
+At this point we are able to create an `<li>` element and set its content to the value entered by the user into the `<input>` element.
+
+```js {linenostart=21}
+const li = document.createElement('li');
+li.textContent = input.value;
+```
+
+Finally, we clear the input so the user can add another item and insert our newly created item into our list.
+
+```js {linenostart=23}
+input.value = "";
+list.append(li);
+```
+
 
 Our application now has some concrete functionality.
 We can now add a new item to our list.
@@ -541,7 +564,7 @@ Use *the enter key* to efficiently submit multiple items.
 Try submitting *an empty item*, it should be ignored.
 
 >However, refreshing the page reloads the application from scratch, returning us to an empty list.
-> We will solve this later on.
+> We will solve this another time.
 
 #### More styles
 
@@ -892,6 +915,7 @@ addForm.addEventListener('submit', ev => {
     list.append(li);
 });
 ```
+We have simply created a new `<span>` element and used it to hold the text.
 
 Next, we add the new class onto the `<form>` and the `<li>` elements.
 
@@ -1011,7 +1035,7 @@ ul {
     flex-direction: column;
     gap: 0.5rem;
 
-    label {
+    span {
         background: var(--item-bg-gradient);
         color: var(--item-color);
         padding: 0.5rem;
@@ -1304,7 +1328,7 @@ addForm.addEventListener('submit', ev => {
 ```
 
 > This is a [closure](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Closures) because the `li` variable is accessed from within our nested event handler function.
-Even though the delete button is pressed after the submit event handler has completed, the `li` variable is still accessible from within the closure.
+Even though the delete button is pressed after the submit event handler has completed, the `li` variable created on line 24 is still accessible from within the closure.
 
 This simple addition activates the delete button on each item.
 
@@ -1325,7 +1349,6 @@ const button = document.createElement('button');
 input.type = "text";
 input.placeholder = "new item";
 input.ariaLabel = "new item";
-
 
 button.type = "submit";
 button.textContent = "add";
@@ -1568,5 +1591,218 @@ So this is our final version.
 
 {{<iframe src="examples/step-15" width="400" height="600">}}{{</iframe>}}
 
-At this point we have taken a very simple concept with four main features and built it into a working application in only 42 lines of JavaScript code.
-We paid a lot of attention to how the application is presented
+Study the code differences highlighted below.
+We have used a few new techniques here.
+
+In the JavaScript, we have added a class to an item before removing it.
+This class has an animation which visibly removes the item from our list. 
+This then allows us to actually remove the element on the `animationend` event.
+
+> The `animationend` event triggers when the animation ends!
+
+```js {hl_lines="40-43"}
+const main = document.querySelector('main');
+const list = document.createElement('ul');
+const addForm = document.createElement('form');
+const input = document.createElement('input');
+const button = document.createElement('button');
+
+input.type = "text";
+input.placeholder = "new item";
+input.ariaLabel = "new item";
+
+button.type = "submit";
+button.textContent = "add";
+button.classList.add('highlight');
+
+addForm.classList.add('with-button');
+
+addForm.append(input, button);
+
+main.append(addForm, list);
+
+addForm.addEventListener('submit', ev => {
+    ev.preventDefault();
+    if (!input.value) return;
+    const li = document.createElement('li');
+    const label = document.createElement('label');
+    const done = document.createElement('input');
+    const deleteBtn = document.createElement('button');
+    deleteBtn.innerHTML = "&times;";
+    deleteBtn.classList.add('highlight');
+    label.textContent = input.value;
+    label.classList.add('item');
+    done.type = "checkbox";
+    label.append(done);
+    li.classList.add('with-button');
+    li.append(label, deleteBtn);
+    input.value = "";
+    list.append(li);
+
+    deleteBtn.addEventListener('click', ev => {
+        li.classList.add('removing');
+        li.addEventListener('animationend', ev => {
+            li.remove();
+        })
+    });
+});
+```
+
+This allows for an animation to be applied before the item is finally removed.
+
+> Note that if no animation is added to the CSS then the item will not be removed.
+> This worries me slightly, but I got over it.
+
+The style updates include the addition of two animations, one to animate new items as they are added into the list and one to animate the items before they are removed.
+We also want to animate the background of items when we toggle the 'done' state. 
+To achieve this, we have registered our `--item-bg1` and `item-bg2` custom properties using the [@property](https://developer.mozilla.org/en-US/docs/Web/CSS/@property) rule.
+This allows us to specify that our custom properties are of type `<color>` and enables the transition animation to apply to a gradient.
+
+```css {hl_lines=["1-12", "55-59", "62-70", "108-116", "123-140"]}
+@property --item-bg1 {
+    syntax: '<color>';
+    initial-value: hsl(135, 14%, 48%);
+    inherits: true;
+}
+
+@property --item-bg2 {
+    syntax: '<color>';
+    initial-value: hsl(135, 14%, 28%);
+    inherits: true;
+}
+
+:root {
+    --main-bg1: hsl(285 10% 27% / 0.9);
+    --main-bg2: hsl(285, 10%, 15%);
+    --main-bg-gradient: linear-gradient(
+        var(--main-bg1),
+        var(--main-bg2)
+    );
+    --main-font: system-ui;
+    --main-color: hsl(285, 5%, 95%);
+
+    --highlight-bg1: hsl(24, 96%, 55%);
+    --highlight-bg2: hsl(24, 96%, 45%);
+    --highlight-bg-gradient: linear-gradient(
+        var(--highlight-bg1),
+        var(--highlight-bg2)
+    );
+    --highlight-color: hsl(24, 5%, 95%);
+    --item-color: hsl(135, 5%, 95%);
+}
+
+body {
+    font-family: var(--main-font);
+    background: var(--main-bg-gradient);
+    color: var(--main-color);
+
+    margin: 0 auto;
+
+    min-height: 100dvh;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+
+    >* {
+        padding-inline: 1rem;
+    }
+}
+
+h1 {
+    font-size: 1.5em;
+    font-weight: 400;
+}
+
+.item {
+    --item-bg-gradient: linear-gradient(
+        90deg,
+        var(--item-bg1),
+        var(--item-bg2)
+    );
+    background: var(--item-bg-gradient);
+    color: var(--item-color);
+    transition:
+        --item-bg1 .4s,
+        --item-bg2 .6s .2s;
+
+    &:has(input:checked) {
+        text-decoration: line-through;
+        --item-bg1: hsl(135, 14%, 28%);
+        --item-bg2: hsl(135, 14%, 18%);
+    }
+}
+
+.highlight {
+    background: var(--highlight-bg-gradient);
+    color: var(--highlight-color);
+}
+
+label,
+input,
+button {
+    border: none;
+    font-size: inherit;
+    padding: 0.5rem;
+    border-radius: 3px;
+}
+
+.with-button {
+    display: grid;
+    grid-template-columns: 1fr auto;
+
+    *:first-child {
+        border-radius: 3px 0 0 3px;
+    }
+
+    button:last-child {
+        border-radius: 0 3px 3px 0;
+    }
+}
+
+ul {
+    padding: 0;
+    list-style: none;
+
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+
+    li {
+        margin-top: -2.5rem;
+        opacity: 0;
+        animation: appear .4s forwards;
+
+        &.removing {
+            animation: disappear .4s forwards;
+        }
+    }
+}
+
+input[type="checkbox"] {
+    display: none;
+}
+
+@keyframes appear {
+    100% {
+        opacity: 1;
+        margin-top: 0;
+    }
+}
+
+@keyframes disappear {
+    0% {
+        opacity: 1;
+        margin-top: 0;
+    }
+
+    100% {
+        opacity: 0;
+        margin-top: -2.5rem;
+    }
+}
+```
+
+At this point we have taken a very simple concept with four main features and built it into a working application in only 45 lines of JavaScript code.
+We paid a lot of attention to how the application is presented and ended up with 140 lines of CSS.
+
+>In this exercise you should have picked up the basics of DOM manipulation. 
+Using JavaScript, we can turn an HTML document into a dynamic application.
