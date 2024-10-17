@@ -1,7 +1,7 @@
 ---
 title: Linking scripts
 type: slide
-order: 30
+order: 3
 classes: [even]
 ---
 

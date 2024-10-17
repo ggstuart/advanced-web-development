@@ -1,5 +1,5 @@
 ---
-title: DOM manipulation
+title: A simple application
 type: exercise
 weight: 30
 author: Dr Graeme Stuart

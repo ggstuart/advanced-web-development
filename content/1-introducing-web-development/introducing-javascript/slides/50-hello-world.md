@@ -1,7 +1,7 @@
 ---
 title: Hello world
 type: slide
-order: 40
+order: 50
 classes: [hello]
 ---
 

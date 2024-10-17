@@ -1,5 +1,5 @@
 ---
-title: Introducing JavaScript
+title: Reintroducing Web Development
 type: unit
 weight: 10
 ---

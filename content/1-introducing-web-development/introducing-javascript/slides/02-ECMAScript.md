@@ -1,8 +1,8 @@
 ---
 title: ECMAScript 
 type: slide
-order: 20
-classes: [ecma, block-burger]
+order: 2
+classes: [block-burger, ecma]
 ---
 
 ![Brendan in 1995](./images/brendan-eich-1995.jpg)
@@ -15,5 +15,5 @@ classes: [ecma, block-burger]
 - Since then, new major versions have been finalized and published *every June*.
 - The most recent version is *ECMAScript 2024*, a minor update.
 
-> "ECMAScript was always an unwanted trade name that sounds like a skin disease." - Brendan Eich
+> *"ECMAScript was always an unwanted trade name that sounds like a skin disease."* - Brendan Eich
 

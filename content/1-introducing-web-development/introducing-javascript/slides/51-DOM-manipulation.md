@@ -1,8 +1,8 @@
 ---
 title: DOM Manipulation
 type: slide
-order: 50
-classes: [two-three, block-burger]
+order: 51
+classes: [one-two, block-burger]
 ---
 
 > The DOM, or Document Object Model is a data structure representing the entire document.
