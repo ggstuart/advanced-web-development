@@ -6,7 +6,7 @@ a[href*="developer.mozilla.org"] {
     &::after {
         text-decoration: underline;
         font-size: 0.9em;
-        content: "(see MDN reference)";
+        content: "(see MDN)";
         margin-left: 0.5ch;
     }
 }
