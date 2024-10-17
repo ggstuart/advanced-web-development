@@ -8,6 +8,8 @@ title = 'Advanced Web Development'
     [markup.highlight]
         _merge = "shallow"
     [markup.goldmark]
+        [markup.goldmark.renderer]
+            unsafe = true
         [markup.goldmark.renderHooks]
             [markup.goldmark.renderHooks.link]
                 enableDefault = true
