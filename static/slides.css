@@ -1,0 +1,127 @@
+.slide .content {
+    display: grid;
+    grid-auto-rows: auto;
+
+    li {
+        list-style-position: outside;
+    }
+
+    @media (width<500px) {
+        font-size: 0.9em;
+
+        li {
+            padding: 0;
+        }
+    }
+
+    p:has(img) {
+        margin: 0;
+        max-width: none;
+    }
+
+    p img {
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+        object-position: top;
+        aspect-ratio: 3;
+    }
+
+    ul {
+        padding-left: 2rem;
+        margin-block: auto;
+    }
+
+    blockquote p {
+        margin-block: 0.5rem;
+    }
+}
+
+.even .content {
+    @media (width > 500px) {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+.one-two .content {
+    @media (width > 500px) {
+        grid-template-columns: 1fr 2fr;
+    }
+}
+
+.one-three .content {
+    @media (width > 500px) {
+        grid-template-columns: 1fr 2fr;
+    }
+}
+
+.two-three .content {
+    @media (width > 500px) {
+        grid-template-columns: 2fr 3fr;
+    }
+}
+
+.three-two .content {
+    @media (width > 500px) {
+        grid-template-columns: 3fr 2fr;
+    }
+}
+
+.three-one .content {
+    @media (width > 500px) {
+        grid-template-columns: 3fr 1fr;
+    }
+}
+
+.two-one .content {
+    @media (width > 500px) {
+        grid-template-columns: 2fr 1fr;
+    }
+}
+
+.three .content {
+    grid-template-columns: repeat(3, auto);
+}
+
+
+.v-gap .content {
+    gap: 0 2px;
+}
+
+.h-gap .content {
+    gap: 2px 0;
+}
+
+.both-gap .content {
+    gap: 2px;
+}
+
+.block-burger .content {
+    blockquote {
+        grid-column: 1/-1;
+    }
+}
+
+.p-burger .content {
+    >p {
+        grid-column: 1/-1;
+    }
+}
+
+.nice-p .content {
+    p {
+        margin-block: auto;
+        margin-inline: 2ch;
+    }
+}
+
+.big-quote .content {
+    blockquote {
+        font-size: 1.6em;
+    }
+}
+
+.contain .content p img {
+    object-fit: contain;
+    aspect-ratio: auto;
+}
