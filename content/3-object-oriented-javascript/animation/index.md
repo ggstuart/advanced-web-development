@@ -1096,6 +1096,11 @@ function frame(timestamp) {
 requestAnimationFrame(frame);
 ```
 
+The result is a more complex scene with more variety. 
+
+{{<iframe src="iframes/animation-8" width="1000" height="600">}}{{</iframe>}}
+
+
 ## References
 
 The [setInterval] method allowed us to call a function regularly to draw a scene. 
