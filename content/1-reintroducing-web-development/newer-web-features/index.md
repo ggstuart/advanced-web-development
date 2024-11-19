@@ -11,6 +11,8 @@ slides:
     - slides/colour-from.md
     - slides/subgrid.md
     - slides/container-queries.md
+    - slides/offset.md
+    - slides/align-content.md
 ---
 
 Some important new features
