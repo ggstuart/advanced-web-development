@@ -51,10 +51,10 @@ ul.flexy {
 
 ```
 <ul class="flexy">
-    <li>Item</li>
-    <li>Item</li>
-    <li>Item</li>
-    <li>Item</li>
+    <li>Item 1</li>
+    <li>Item 2</li>
+    <li>Item 3</li>
+    <li>Item 4</li>
 </ul>
 
 >By default, the *child selector* (` `) is assumed. 
