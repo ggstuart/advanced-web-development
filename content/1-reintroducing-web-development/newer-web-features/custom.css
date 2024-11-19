@@ -1,0 +1,31 @@
+.twin-code .content {
+    /* background: blue; */
+    grid-template-rows: 1fr min-content min-content;
+    >:not(.highlight) {
+        grid-column: span 2;
+    }
+}
+
+.baseline .content {
+    gap: 2px;
+    @media (width > 500px) {
+        grid-template-columns: auto 1fr;
+    }
+}
+
+.grid-list-auto .content ul {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    height: 100%;
+    gap: 2px;
+    list-style: none;
+    padding: 0;
+
+    li {
+        padding: 0.5rem;
+        background: var(--button-gradient);
+        color: var(--clr-button-text);
+        text-align: center;
+        align-content: center;
+    }
+}

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>CSS nesting and container queries</title>
+</head>
+<body>
+    <header>
+        <h1>CSS nesting and container queries</h1>
+    </header>
+    <main>
+        <section>
+            <h2>This is a section</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam placeat soluta totam reiciendis blanditiis labore?</p>
+        </section>
+        <section>
+            <h2>This is our component</h2>
+            <figure class="my-component">
+                <img src="https://www.placecats.com/200/200" alt="a cat">
+                <figcaption>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit, porro.</p>
+                    <p>Unde iusto asperiores excepturi, molestiae molestias inventore ad blanditiis non!</p>
+                </figcaption>
+            </figure>
+            <p>It takes the full width of it's container.</p>
+        </section>
+        <section>
+            <h2>Adding components into a grid</h2>
+            <ul class="grid">
+                <li>
+                    <figure class="my-component">
+                        <img src="https://www.placecats.com/230/230" alt="">
+                        <figcaption>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis, necessitatibus!</p>
+                            <p>Animi delectus quibusdam repudiandae ex deserunt illo. Perspiciatis, dignissimos eius.</p>
+                        </figcaption>
+                    </figure>
+                </li>
+                <li>
+                    <figure class="my-component">
+                        <img src="https://www.placecats.com/230/230" alt="">
+                        <figcaption>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet, perferendis!</p>
+                            <p>Est sapiente et, laboriosam perspiciatis laudantium harum? Pariatur, laudantium vitae?</p>
+                        </figcaption>
+                    </figure>
+                </li>
+                <li>
+                    <figure class="my-component">
+                        <img src="https://www.placecats.com/230/230" alt="">
+                        <figcaption>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium, natus.</p>
+                            <p>Explicabo nemo repudiandae ad quis voluptates iusto ducimus labore fugit?</p>
+                        </figcaption>
+                    </figure>
+                </li>
+                <li>
+                    <figure class="my-component">
+                        <img src="https://www.placecats.com/230/230" alt="">
+                        <figcaption>
+                            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Consectetur, fugit!</p>
+                            <p>Nostrum consequuntur ab sunt ut minus alias quae perspiciatis magnam.</p>
+                        </figcaption>
+                    </figure>
+                </li>
+            </ul>
+        </section>
+    </main>
+    <footer>
+        <small>
+            <p>CSS nesting and container queries</p>
+        </small>
+    </footer>
+</body>
+</html>

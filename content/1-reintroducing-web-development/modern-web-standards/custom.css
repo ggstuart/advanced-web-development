@@ -1,0 +1,135 @@
+
+.platform .content {
+    grid-template-columns: 1fr 3fr;
+    p:has(img) {
+        grid-row: span 4;
+    }
+}
+
+.zen .content {
+    /* grid-auto-flow: column; */
+    grid-template-rows: min-content auto auto auto auto min-content;
+    grid-template-columns: 1fr 3fr 1fr;
+    > p:not(:has(img)) {
+        grid-column: 2;
+    }
+    > p:has(img) {
+        grid-column: 1;
+        grid-row: 2 / -2;
+        &:last-of-type {
+            grid-column: 3;
+            img {
+                object-position: bottom;
+            }
+        }
+    }
+}
+
+.responsive .content {
+    p img {
+        object-fit: contain;
+        object-position: center;
+        background: black;
+    }
+    blockquote {
+        place-content: center;
+    }
+
+    @media(width>700px) {
+        grid-template-columns: 3fr 2fr;
+        p img {
+                padding-right: 4em;
+            }
+        p:has(img) {
+            grid-row: span 2;
+        }
+        blockquote:last-of-type {
+            grid-column: span 2;
+        }
+    }
+
+    @media(width>1000px) {
+        grid-template-rows: 1fr auto auto;
+        p:has(img) {
+            grid-row: span 3;
+        }
+    }
+
+
+}
+
+.baseline .content {
+    grid-template-columns: 1fr 4fr 1fr;
+    > * {
+        grid-column: 2;
+    }
+    p img {
+        aspect-ratio: auto;
+        height: auto;
+    }
+    ul {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        gap: 0.25rem;
+        padding: 0;
+        list-style: none;
+        margin: 0 0 1rem 0;
+    }
+    li {
+        background: var(--accent-gradient);
+        color: var(--clr-accent-text);
+        padding: 0.25rem 0.5rem;
+        border-radius: 2rem;
+    }
+}
+
+.literary-machines .content {
+    grid-template-rows: auto 1fr auto;
+    p:nth-of-type(2) img {
+        object-position: 0 -3em;
+    }
+}
+
+.progressive .content {
+    li {
+        padding: 0;
+    }
+    .highlight:last-of-type {
+        grid-row: span 2;
+    }
+    > p {
+        text-align: left;
+        text-wrap: wrap;
+        margin-left: 1rem;
+    }
+}
+
+.caniuse .content {
+    grid-template-rows: 1fr auto;
+    p img {
+        object-fit: contain;
+    }
+}
+
+.review .content {
+    grid-template-rows: min-content auto;
+    grid-template-columns: repeat(3, 1fr);
+    ul {
+        ul {
+            font-size: 0.9em;
+            list-style-type: circle;
+        }
+    }
+    :first-child {
+        grid-column: 1 / -1;
+    }
+}
+
+.summary-slide .content {
+    grid-template-rows: 1fr auto auto auto;
+    blockquote:first-of-type {
+        grid-column: 1 / -1;
+    }
+}
