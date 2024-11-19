@@ -45,10 +45,10 @@ classes: [twin-code, small-code]
             calc(r + var(--r)) g calc(b + var(--b))
         );
     }
-    :nth-child(3n-2) { --r: -0.5; } /* left column */
     :nth-child(3n)   { --r: +0.5; } /* right column */
-    :nth-child(-n+3) { --b: -0.5; } /* top row */
+    :nth-child(3n-2) { --r: -0.5; } /* left column */
     :nth-child(n+7)  { --b: +0.5; } /* bottom row */
+    :nth-child(-n+3) { --b: -0.5; } /* top row */
 }
 ```
 
