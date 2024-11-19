@@ -5,6 +5,8 @@ weight: 10
 slides:
     - slides/literary-machines.md
     - slides/a-platform-for-publishing.md
+    - slides/standards.md
+    - slides/living-standard.md
     - slides/universality.md
     - slides/review.md
     - slides/decoupled.md
