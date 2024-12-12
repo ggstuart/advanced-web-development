@@ -1,7 +1,7 @@
 ---
 type: slide
 title: Object literals
-classes: [one-three, both-gap, p-burger, p-then-examples]
+classes: [one-two, both-gap, p-burger, p-then-examples]
 ---
 
 Objects can be treated as key/value pairs.
