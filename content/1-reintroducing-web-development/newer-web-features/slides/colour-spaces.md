@@ -39,7 +39,7 @@ classes: [twin-code]
     grid-template-rows: 1fr 1fr 1fr;
     gap: 2px;
     span { 
-        background: linear-gradient(45deg,
+        background: linear-gradient(90deg,
             color(var(--space) 1.0 0.0 0.0),
             color(var(--space) 0.0 1.0 0.0),
             color(var(--space) 0.0 0.0 1.0)
