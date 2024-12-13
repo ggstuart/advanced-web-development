@@ -1,32 +1,48 @@
 ---
-title: DOM Manipulation
+title: Patterns of DOM Manipulation
 type: slide
 order: 51
-classes: [one-two, block-burger, h-gap]
+classes: [one-two, p-burger, both-gap]
 ---
 
-> The DOM, or Document Object Model is a data structure representing the entire document.
-> The global `document` object presents many methods for inspecting and manipulating the DOM.
-
-We can grab an element and change its content. 
+> We can grab an element and remove it or change its content. 
 
 ```js
-document.getElementById('my-element').textContent = "hello";
+document.querySelector('#this-element').remove();
+document.querySelector('#that-element').textContent = "hello";
 ```
 
-Here we get all the `<div>` elements and change the content of the first one.
+> We can loop over multiple elements.
 
 ```js
-const divs = document.getElementsByTagName('div');
-divs[0].textContent = "I replaced the content.";
+const paragraphs = document.querySelectorAll('p');
+for (const p of paragraphs) {
+    p.textContent = `${p.textContent} - modified`;
+}
 ```
 
-We can also create new elements and insert them into the DOM.
+> We can also create new elements, compose them into complex structures and insert them into the DOM.<br><br>
+This function is kept simple to save space, it has some serious limitations and flaws.<br><br>
+For example, no `alt` attribute on the `<img>` and it should probably add a `class` to the `<article>`.
+Also, it could handle multiple paragraphs.
 
 ```js
-const newDiv = document.createElement('div');
-newDiv.textContent = "this is a completely new element.";
-document.body.append(newDiv);
-```
+function myArticle(imageUrl, title, text) {
+    const article = document.createElement('article');
+    const img = document.createElement('img');
+    const heading = document.createElement('h2');
+    const p = document.createElement('p');
+    img.src = imageUrl;
+    heading.textContent = title;
+    p.textContent = text;
+    article.append(img, heading, p);
+    return article;
+}
 
-> Most of what you can imagine can be done using the built-in **document API**.
+const article = myArticle(
+    'https://placecat.com/100/100', 
+    "Article", 
+    "This is an article."
+)
+document.body.append(article);
+```

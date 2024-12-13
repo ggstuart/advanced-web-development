@@ -4,38 +4,51 @@ title: The Element API
 classes: [p-burger, one-two, both-gap]
 ---
 
-The [element API] allows your JavaScript code to interact with HTML elements.
+Some examples of using the [element API] to interact with HTML elements.
 
-> We can do things like set the `id` and access the HTML code for an element.
+> We can set certain specific attributes such as the `id` or `src`.
+This will depend on the type of element.
 
 ```js
-const section = document.createElement('section');
-section.id = "welcome";
+const img = document.createElement('img');
+img.id = "logo";
+img.src = "images/logo.png";
+img.alt = "The logo shows badges for HTML, CSS, JavaScript and PHP";
+```
 
-console.log(section.outerHTML);     // <section id="welcome"></section>
+> We can access the HTML code for an element as a string
+
+```js
+console.log(img.outerHTML);
+// '<img id="logo" src="images/logo.png" 
+//      alt="The logo shows badges for HTML, CSS, JavaScript and PHP">'
 ```
 
 > We can set and get arbitrary attributes
 
 ```js
-section.setAttribute('lang', 'es');
-
-console.log(section.outerHTML)  // <section id="welcome" lang="es"></section>
+const p = document.createElement('p');
+p.setAttribute('lang', 'es'); // or use p.lang = 'es'
+p.textContent = `¡Hola Mundo!';
 ```
 
-> We can also set the HTML content of an element to a string of HTML code using [innerHTML] and access it's [children].
+> We can set the content of an element to a string of HTML using [innerHTML].
 
 ```js
-section.innerHTML = `
-<p>
-    Hola Mundo.
-</p>`;
-
-console.log(section.children[0])    // <p>Hola Mundo</p>
+const ul = document.createElement('ul');
+ul.innerHTML = `<li>Document</li><li>Element</li><li>Node</li>`;
 ```
 
+> We can access an element's [children], [tagName] and many other basic parameters.
+
+```js
+for (const child of ul.children) { // LI
+    console.log(child.tagName)     // LI
+}                                  // LI
+```
 
 
 [element API]: https://developer.mozilla.org/en-US/docs/Web/API/Element
 [innerHTML]: https://developer.mozilla.org/en-US/docs/Web/API/Element/innerHTML
 [children]: https://developer.mozilla.org/en-US/docs/Web/API/Element/children
+[tagName]: https://developer.mozilla.org/en-US/docs/Web/API/Element/tagName

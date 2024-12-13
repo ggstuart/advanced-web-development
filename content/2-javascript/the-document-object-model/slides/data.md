@@ -1,10 +1,10 @@
 ---
 type: slide
-title: The Node API
-classes: [even, block-burger, p-burger]
+title: Convert data into nodes
+classes: [even, p-burger, both-gap]
 ---
 
-> Both the [document API] object and all [element API] objects inherit functionality from the [node API].
+Code can be used to render data into HTML.
 
 ```js
 const data = {
@@ -12,7 +12,30 @@ const data = {
     CSS: "presentation",
     JS: "behaviour"
 }
+```
 
+<blockquote>
+<ol>
+    <li>
+        <strong>HTML</strong>
+        <span>is for</span>
+        <em>content</em>
+    </li>
+    <li>
+        <strong>CSS</strong>
+        <span>is for</span>
+        <em>presentation</em>
+    </li>
+    <li>
+        <strong>JS</strong>
+        <span>is for</span>
+        <em>behaviour</em>
+    </li>
+</ol>
+</blockquote>
+
+
+```js
 const myList = document.createElement('ol');
 for (const key in data) {
     const item = document.createElement('li');
@@ -39,7 +62,7 @@ for (const key in data) {
         <strong>CSS</strong>
         <span>is for</span>
         <em>presentation</em>
-        </li>
+    </li>
     <li>
         <strong>JS</strong>
         <span>is for</span>
@@ -47,7 +70,3 @@ for (const key in data) {
     </li>
 </ol>
 ```
-
-[document API]: https://developer.mozilla.org/en-US/docs/Web/API/Document
-[element API]: https://developer.mozilla.org/en-US/docs/Web/API/Element
-[node API]: https://developer.mozilla.org/en-US/docs/Web/API/Node
