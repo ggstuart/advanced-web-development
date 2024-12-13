@@ -1,0 +1,19 @@
+body {
+    margin: 0;
+    display: grid;
+}
+
+body:not(:focus) {
+    overflow: hidden;
+    &::before {
+        content: "click to activate event listeners";
+        font-size: 2em;
+        position: fixed;
+        inset: 0;
+        display: grid;
+        place-items: center;
+    }
+    canvas {
+        opacity: 0.2;
+    }
+}
