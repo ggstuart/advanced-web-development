@@ -34,14 +34,20 @@
     img {
         aspect-ratio: 1.5;
         object-position: center;
+        display: none;
     }
 
     @media (width>700px) {
+        img {
+            display: grid;
+        }
         grid-template-rows: 1fr auto;
-        grid-template-columns: 1fr 2fr;
+        grid-template-columns: 2fr 5fr;
 
-        p:has(img) {
-            grid-row: span 2;
+        p:has(img):last-of-type img {
+            aspect-ratio: auto;
+            object-fit: contain;
+            /* grid-row: span 2; */
         }
 
         blockquote {
