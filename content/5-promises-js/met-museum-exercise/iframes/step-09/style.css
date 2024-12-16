@@ -1,0 +1,101 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans+Condensed:wght@300&display=swap');
+
+:root {
+    --red: hsl(0, 70%, 50%);
+    --dark: hsl(0, 0%, 20%);
+    --light: hsl(0, 0%, 90%);
+}
+
+body {
+    font-family: "Open Sans Condensed", sans-serif;
+    background: var(--dark);
+    color: var(--light);
+    display: grid;
+    margin: 0;
+    grid-template-rows: auto 1fr auto;
+    min-height: 100dvh;
+
+    header, footer {
+        background: var(--red);
+        padding-inline: 1rem;
+    }
+
+    header {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: space-between;
+
+        h1 {
+            margin-block: 0.5rem;
+        }
+        section#search {
+            margin-block: 0.5rem;
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1ch;
+            label::after {
+                content: ":";
+            }
+            input {
+                font-family: system-ui;
+                font-size: inherit;
+            }
+        }
+    }
+    footer {
+        padding-block: 0.5rem;
+        text-align: right;
+        a {
+            color: inherit;
+        }
+    }
+}
+
+main {
+    display: grid;
+    &::before {
+        padding: 0.25rem 1rem;
+        content: attr(data-message);
+    }
+    &:empty {
+        padding: 1rem;
+        place-items: center;
+        &::before {
+            font-size: 2em;
+            text-align: center;
+            content: "Enter a search term to explore the collection"
+        }
+        &.loading {
+            place-content: center;
+            &::before {
+                content: "searching";
+            }
+            &::after {
+                content: "";
+                width: 3em;
+                aspect-ratio: 15;
+                background: var(--red);
+                animation: search 300ms infinite alternate ease-in-out;
+            }
+        }
+    }
+    figure {
+        display: grid;
+        margin: 0;
+        img {
+            width: 100%;
+        }
+        figcaption {
+            background: var(--light);
+            color: var(--dark);
+            padding: 1rem;
+        }
+    }
+}
+
+@keyframes search {
+    0% { translate: -100%; }
+    100% { translate: 100%; }
+}
