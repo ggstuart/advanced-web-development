@@ -2,7 +2,9 @@
 title: Advanced Web Development
 ---
 
-This part of the module introduces more front-end web technologies, we will explore what JavaScript can do in the browser and how to make dynamic front-end applications that interact with web APIs.
+This site introduces more front-end web technologies.
+Web standards move fast and new capabilities are introduced continuously.
+We will explore what JavaScript can do in the browser and how to make dynamic front-end applications that interact with web APIs.
 
 Each week there will be two lectures introducing concepts and two lab sessions where you will get your hands dirty.
 
