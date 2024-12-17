@@ -5,6 +5,7 @@ classes: [one-two, both-gap, p-burger, p-then-examples]
 ---
 
 Objects can be treated as key/value pairs.
+Though they are far more than that.
 
 > Objects are defined with curly braces containing comma-separated key/value pairs.
 Each key/value pair is separated with a colon.

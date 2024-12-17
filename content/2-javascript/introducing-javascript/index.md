@@ -9,6 +9,7 @@ slides:
     - slides/declarative-vs-imperative.md
     - slides/linking-scripts.md
     - slides/live-server.md
+    - slides/console.md
     - slides/declare-variables.md
     - slides/strict-mode.md
     - slides/dynamically-typed.md
@@ -23,7 +24,7 @@ slides:
     - slides/array-methods.md
     - slides/iteration.md
     - slides/object-literals.md
-    - slides/console.md
+    - slides/maps.md
 ---
 
 A look at the core language
