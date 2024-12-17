@@ -7,20 +7,31 @@ classes: [align-content]
 > We can now use the `align-content` property in block elements.
 
 ```html
-<div>This is just a div</div>
+<div class="just-a-div">
+    This is just a div
+</div>
 ```
 
 ```css
-div {
+div.just-a-div {
+    font-size: 3em;
     background: yellow; 
     text-align: center;
     align-content: center; 
 }
 ```
 
-<div style="align-content: center; background: yellow; text-align: center;">This is just a div</div>
+<div class="just-a-div">
+    This is just a div
+</div>
 
-
-
+<style>
+div.just-a-div {
+    font-size: 3em;
+    background: yellow; 
+    text-align: center;
+    align-content: center; 
+}
+</style>
 
 

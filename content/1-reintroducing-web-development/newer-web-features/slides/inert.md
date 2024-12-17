@@ -1,15 +1,18 @@
 ---
 type: slide
 title: The inert attribute
+classes: [even, block-burger, inert]
 ---
 
-By default, `inert` blocks focus and click events. 
+> By default, `inert` blocks focus and click events. 
 
 ```HTML
 <section>
     <h3>Normal, active content</h3>
     <button>I am a clickable button</button>
 </section>
+```
+```HTML
 <section inert>
     <h3>Inert, inactive content</h3>
     <button>I am not clickable</button>

@@ -4,17 +4,14 @@ type: slide
 classes: [grid-list-auto, even, baseline]
 ---
 
-> Baseline 2023 - cool stuff
+> Baseline 2023
 
 - CSS Nesting
 - The `inert` attribute
+- CSS `:has()` selector
 - Size `@container` queries
 - New `color` spaces and functions
 - CSS `Subgrid`
-
-> Other new stuff in 2023
-
-- CSS `:has()` selector
 - Container query units
 - The `:user-valid` and `:user-invalid` pseudo-classes
 - New range syntax for media queries
@@ -24,13 +21,10 @@ classes: [grid-list-auto, even, baseline]
 - Relaxed parsing for CSS Nesting
 - Lazy-load offscreen iframes
 
-> Baseline 2024 - cool stuff
+> Baseline 2024
 
 - CSS `offset-position` and `offsetpath` values
 - The `Popover` API
-
-> Other new stuff in 2024
-
 - `align-content` on block layout
 - `content-visibility`
 - Declarative Shadow DOM

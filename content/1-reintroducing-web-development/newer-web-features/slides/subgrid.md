@@ -17,28 +17,28 @@ classes: [even, small-code]
     </div>
     <div class="child">
         <img src="https://www.placecats.com/bella/200/200">
-        <p>Child 3</p>
+        <p>Child 3 wraps</p>
     </div>
 </div>
 ```
 
 ```CSS
-    .parent {
+.parent {
+    display: grid;
+    grid-template-columns: 100px 100px 100px;
+    grid-template-rows: 100px min-content 100px;
+    place-content: center;
+    gap: 0 1rem;
+    .child {
+        grid-row: span 2;
         display: grid;
-        grid-template-columns: 100px 100px 100px;
-        grid-template-rows: 100px min-content 100px;
-        place-content: center;
-        gap: 0 1rem;
-        .child {
-            grid-row: span 2;
-            display: grid;
-            grid-template-rows: subgrid;
-            &:nth-child(2) {
-                grid-column: 2;
-                grid-row: 2 / span 2;
-            }
+        grid-template-rows: subgrid;
+        &:nth-child(2) {
+            grid-column: 2;
+            grid-row: 2 / span 2;
         }
     }
+}
 ```
 
 > Subgrid allows nested grids to inherit rows and columns from their parent grid.
@@ -54,7 +54,7 @@ classes: [even, small-code]
     </div>
     <div class="child">
         <img src="https://www.placecats.com/bella/200/200">
-        <p>Child 3</p>
+        <p>Child 3 wraps</p>
     </div>
 </div>
 
