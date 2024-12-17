@@ -135,3 +135,9 @@
     grid-template-columns: 1fr 1fr;
     .highlight:last-of-type { grid-column: span 2; }
 }
+
+.class-list .content {
+    > blockquote {
+        /* grid-row: span 2; */
+    }
+}

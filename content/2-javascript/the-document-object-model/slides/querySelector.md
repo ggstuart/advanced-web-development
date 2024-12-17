@@ -4,7 +4,6 @@ type: slide
 classes: [p-burger, three-two, both-gap]
 ---
 
-Using CSS selector syntax makes selecting elements from the DOM very easy.
 
 ```html
 <ul id="my-list">
@@ -22,9 +21,10 @@ Using CSS selector syntax makes selecting elements from the DOM very easy.
 </ul>
 </blockquote>
 
+Using CSS selector syntax makes selecting elements from the DOM very easy.
+
 ```js
 document.querySelector('#my-element')
-
 // <span id="my-element">100</span>
 ```
 
@@ -32,7 +32,6 @@ document.querySelector('#my-element')
 
 ```js
 document.querySelector('#my-list>:nth-child(3)')
-
 // <li>We'd like to read this content into JS.</li>
 ```
 

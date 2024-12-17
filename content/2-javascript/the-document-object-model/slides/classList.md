@@ -1,57 +1,71 @@
 ---
 type: slide
 title: The ClassList API
-classes: [one-two, both-gap, p-burger]
+classes: [one-two-two, both-gap, p-burger, class-list]
 ---
+
+
+> The class attribute can be set via [`className`].
+
+```js
+let el = document.createElement('p');
+el.className = "warning highlight";
+```
+
+```html
+<p class="warning highlight"></p>
+```
 
 The [classList API] simplifies working with the `class` attribute of elements.
 
-> It can be accessed directly via the [className] property.
+> [`add()`]
 
 ```js
-let myElement = document.createElement('p');
-myElement.className = "warning highlight";
-
-// class="warning highlight"
+el.classList.add("error");
 ```
 
-> `classList` can [add()] classes
+```html
+<p class="warning highlight error"></p>
+```
+
+> [`remove()`]
 
 ```js
-myNode.classList.add("error");
-
-// class="warning highlight error"
+el.classList.remove("warning");
 ```
 
-> `classList` can [remove()] classes
+```html
+<p class="highlight error"></p>
+```
+
+> [`toggle()`] returns a boolean
 
 ```js
-myNode.classList.remove("warning");
-
-// class="highlight error"
+el.classList.toggle("warning");
+el.classList.toggle("error");  
+el.classList.toggle("warning");
 ```
 
-> `classList` can [toggle()] classes
+```html
+<p class="warning highlight error"></p>
+<p class="warning highlight"></p>
+<p class="highlight"></p>
+```
+
+> [`replace()`] returns a boolean
 
 ```js
-myNode.classList.toggle("warning");  // class="warning highlight error"
-myNode.classList.toggle("error");    // class="warning highlight"
-myNode.classList.toggle("warning");  // class="highlight"
+el.classList.replace("highlight", "info");
+
 ```
-
-> `classList` can [replace()] classes
-
-```js
-myNode.classList.replace("highlight", "info");
-
-// class="info"
+```html
+<p class="info"></p>
 ```
-
 
 [classList API]: https://developer.mozilla.org/en-US/docs/Web/API/Element/classList
-[classname]: https://developer.mozilla.org/en-US/docs/Web/API/Element/className
+[`className`]: https://developer.mozilla.org/en-US/docs/Web/API/Element/className
 
-[add()]: https://developer.mozilla.org/en-US/docs/Web/API/DOMTokenList/add
-[remove()]: https://developer.mozilla.org/en-US/docs/Web/API/DOMTokenList/remove
-[toggle()]: https://developer.mozilla.org/en-US/docs/Web/API/DOMTokenList/toggle
-[replace()]: https://developer.mozilla.org/en-US/docs/Web/API/DOMTokenList/replace
+[`add()`]: https://developer.mozilla.org/en-US/docs/Web/API/DOMTokenList/add
+[`remove()`]: https://developer.mozilla.org/en-US/docs/Web/API/DOMTokenList/remove
+[`toggle()`]: https://developer.mozilla.org/en-US/docs/Web/API/DOMTokenList/toggle
+[`replace()`]: https://developer.mozilla.org/en-US/docs/Web/API/DOMTokenList/replace

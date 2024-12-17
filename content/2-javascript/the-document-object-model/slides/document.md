@@ -7,8 +7,8 @@ classes: [p-burger, three-two, both-gap]
 The [document API] provides access to the current DOM.
 
 > We can grab specific parts of the document, for example the [`doctype`], [`head`] or the [`body`].
-> In the browser, we can also access properties such as the [URL] and [title] of the document.
-> Element types such as [images], [links], [scripts] or [styleSheets] can be grabbed easily.
+> In the browser, we can also access properties such as the [`URL`] and [`title`] of the document.
+
 
 ```js
 const headElement = document.head;
@@ -16,11 +16,17 @@ const bodyElement = document.body;
 const docType = document.doctype;
 const url = document.URL;
 const title = document.title;
+```
+
+> Element types such as [`images`], [`links`], [`scripts`] or [`styleSheets`] can be grabbed easily.
+
+```js
 const images = document.images;
 const links = document.links;
 const scripts = document.scripts;
 const stylesheets = document.styleSheets;
 ```
+
 
 > Accessing [HTMLElement] objects from the DOM can be done in many ways.
 
@@ -50,12 +56,12 @@ document.body.append(p1, p2);
 [`head`]: https://developer.mozilla.org/en-US/docs/Web/API/Document/head
 [`body`]: https://developer.mozilla.org/en-US/docs/Web/API/Document/body
 [`doctype`]: https://developer.mozilla.org/en-US/docs/Web/API/Document/doctype
-[images]: https://developer.mozilla.org/en-US/docs/Web/API/Document/images
-[links]: https://developer.mozilla.org/en-US/docs/Web/API/Document/links
-[scripts]: https://developer.mozilla.org/en-US/docs/Web/API/Document/scripts
-[styleSheets]: https://developer.mozilla.org/en-US/docs/Web/API/Document/styleSheets
-[URL]: https://developer.mozilla.org/en-US/docs/Web/API/Document/URL
-[title]: https://developer.mozilla.org/en-US/docs/Web/API/Document/title
+[`images`]: https://developer.mozilla.org/en-US/docs/Web/API/Document/images
+[`links`]: https://developer.mozilla.org/en-US/docs/Web/API/Document/links
+[`scripts`]: https://developer.mozilla.org/en-US/docs/Web/API/Document/scripts
+[`styleSheets`]: https://developer.mozilla.org/en-US/docs/Web/API/Document/styleSheets
+[`URL`]: https://developer.mozilla.org/en-US/docs/Web/API/Document/URL
+[`title`]: https://developer.mozilla.org/en-US/docs/Web/API/Document/title
 
 [createElement]: https://developer.mozilla.org/en-US/docs/Web/API/Document/createElement
 [HTMLElement]: https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement
