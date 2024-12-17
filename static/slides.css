@@ -1,6 +1,7 @@
 .slide .content {
     display: grid;
     grid-auto-rows: auto;
+    grid-template-rows: min-content;
 
     li {
         list-style-position: outside;
@@ -35,6 +36,14 @@
     blockquote p {
         margin-block: 0.5rem;
     }
+
+    p {
+        align-content: center;
+    }
+
+    button {
+        font-size: inherit;
+    }
 }
 
 .even .content {
@@ -49,9 +58,21 @@
     }
 }
 
+.one-two-two .content {
+    @media (width > 500px) {
+        grid-template-columns: 1fr 2fr 2fr;
+    }
+}
+
 .one-three .content {
     @media (width > 500px) {
-        grid-template-columns: 1fr 2fr;
+        grid-template-columns: 1fr 3fr;
+    }
+}
+
+.one-three-two .content {
+    @media (width > 500px) {
+        grid-template-columns: 1fr 3fr 2fr;
     }
 }
 
@@ -81,6 +102,10 @@
 
 .three .content {
     grid-template-columns: repeat(3, auto);
+}
+
+.three-even .content {
+    grid-template-columns: repeat(3, 1fr);
 }
 
 .auto-one .content {
@@ -153,4 +178,8 @@ iframe:focus {
 
 .small-code .highlight {
     font-size: 0.9em;
+}
+
+.centered-code .highlight {
+    align-content: center;
 }
