@@ -14,10 +14,7 @@ However, we will be assuming a level of familiarity.
 > If you are confused then please refer back to [CTEC2712].
 
 
-## Nesting
-
-[CSS Nesting] was declared a newly available feature in 2023 and so can now safely be used in most cases.
-Nesting can make the logic of a CSS file much easier to follow since rules can be placed logically in their proper context.
+## A basic webpage
 
 Let's create a simple example.
 
@@ -89,24 +86,38 @@ body>footer {
 }
 ```
 
-> There is a lot to explain here.
-
+There is a lot to explain here.
 The core change is to the layout.
-We have set the minimum height of the `<body>` element to fill the viewport (line 8) and added a grid layout (line 6) which gives the `<main>` element any spare space (line 7) which pushes the `<footer>` element to the bottom of the viewport (when there is not enough content to fill the viewport).
-
-> Notice we use [selector lists] to apply similar style rules to multiple selectors.
-This ensures consistency.
-We could alternatively use [custom properties] for this.
+We have set the minimum height of the `<body>` element to fill the viewport (line 8) and added a grid layout (line 6) which allows the `<header>` and `<footer>` elements to take their natural heights and gives the `<main>` element any spare space (line 7).
+When there is not enough content to fill the viewport, this layout pushes the `<footer>` element to the bottom.
 
 We have also set some default styles for the page, including colours and a font, we have overridden some box properties (`margin` and `padding-inline`) and we set the header and footer elements to `display: flow-root` to prevent any margins from overflowing.
 There are also some tweaks to `<p>` elements inside the main content.
+
+> Notice that we have explicitly used the [child combinator] (`>`) in our selectors to target very specific elements in the document hierarchy.
+> In this example, the code only targets the `<header>`, `<main>` and `<footer>` elements that are direct children of the `<body>`.
+> It also targets `<section>` elements that are direct children of the `<main>` element.
+> Since these are the only examples of these element types in the page, the [child combinator] isn't strictly necessary.
+> ```css {linenostart=11}
+> body>header,
+> body>footer,
+> body>main>section {
+>     padding-inline: 1rem;
+> }
+> ```
+> We also use [selector lists] (comma-separated selectors) to apply similar style rules to multiple selectors.
+> This ensures consistency and avoids repetition.
+> We could alternatively have used [custom properties] for this.
 
 The result is pretty basic, but its good enough for our purposes.
 
 {{<iframe src="examples/container-1" width="1000" height="400">}}{{</iframe>}}
 
-We can now introduce nesting to create a block of CSS code which describes the `<body>` layout and default styles.
-Notice that we have explicitly used the [child combinator] (`>`) in our selectors to target very specific elements in the document hierarchy.
+### Introducing nesting
+
+We can introduce nesting to create a block of CSS code which describes the `<body>` layout and default styles.
+[CSS Nesting] was declared a newly available feature in 2023 and so can now safely be used in most cases.
+Nesting can make the logic of a CSS file much easier to follow since rules can be placed logically in their proper context.
 
 Merging the code into a nested block is relatively simple and allows us to remove repeated selectors (such as `body`).
 The following code has removed all but the main `body` selector and moved everything else inside it.
@@ -145,6 +156,7 @@ body {
 }
 ```
 
+
 Nothing has changed in the site. 
 We still have identical styles.
 
@@ -160,7 +172,7 @@ That is, a chunk of structured HTML with associated CSS rules which we can use t
 The HTML for our component is simple. 
 We will use a `<figure>` element, with an `<img>` and a `<figcaption>` for a small amount of content describing the image. In this case, we will add a few short paragraphs of text inside the caption.
 
-Adding it into our page with a `class=my-component` attribute to allow us to style it without affecting any other `<figure>` elements.
+Adding it into our page with a *class="my-component"* attribute to allow us to style it without affecting any other `<figure>` elements.
 
 ```html {hl_lines="18-28"}
 <!DOCTYPE html>
