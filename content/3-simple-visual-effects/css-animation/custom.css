@@ -1,0 +1,41 @@
+.demo {
+    background: #eee;
+    align-content: center;
+    font-size: 1.2em;
+}
+
+.spaced {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.before-after .content {
+    grid-template-columns: 1fr 2fr 1fr;
+
+    .highlight {
+        font-size: 0.8em;
+    }
+}
+
+.transform .content {
+    grid-template-columns: 2fr 3fr 2fr;
+}
+
+.pipeline .content {
+    img {max-width: 80ch;}
+    ul {
+        margin: auto;
+    }
+    > p {
+        margin-block: 0.25rem;
+    }
+}
+
+.timing-functions .content {
+    grid-template-rows: 1fr;
+}
+
+.small-code .highlight {
+    font-size: 0.9em;
+}
