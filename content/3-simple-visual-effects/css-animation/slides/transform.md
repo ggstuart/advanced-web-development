@@ -63,7 +63,7 @@ However, many functions now have their own CSS properties.
 
 
 <style>
-.demo.transform {
+.current .demo.transform {
     div {
         margin-inline: auto;
         width: 3em;

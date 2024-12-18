@@ -4,57 +4,44 @@ type: slide
 classes: [before-after, p-burger, both-gap]
 ---
 
-The [::before] and [::after] pseudo elements can be added to any element using CSS.
+The [`::before`] and [`::after`] pseudo elements can be added to any element using CSS.
 
 > They become the first and last child elements.
 
-```css
-.surrounded {
-    &::before, &::after { background-color: yellow; }
-    &::before { content: "before "; }
-    &::after { content: " after"; }
-}
-```
-
-<div class="demo">
-    <div class="surrounded">div.surrounded</div>
-</div>
-
-<style>
-.surrounded {
-    &::before, &::after { background-color: yellow; }
-    &::before { content: "before "; }
-    &::after { content: " after"; }
-}
-</style>
-
 > They can be part of a grid layout.
 
+> They can be animated easily.
+
 ```css
-.surrounded2 {
-    display: grid;
-    grid-template-rows: 1fr auto 1fr;
-    &::before, &::after { background-color: yellow; }
-    &::before { content: "before "; }
-    &::after { content: " after"; }
+.surrounded {
+    &::before,
+    &::after {
+        background-color: yellow; 
+    }
+    &::before {
+        content: "before ";
+    }
+    &::after {
+        content: " after";
+    }
 }
 ```
 
-<div class="demo">
-    <div class="surrounded2">div.surrounded2</div>
-</div>
 
-<style>
+```css
 .surrounded2 {
-    display: grid;
-    grid-template-rows: 1fr auto 1fr;
-    &::before, &::after { background-color: yellow; }
-    &::before { content: "before "; }
-    &::after { content: " after"; }
+  display: grid;
+  grid-template-rows: auto auto;
+  grid-template-columns: auto auto;
+  place-content: center;
+  &::before, 
+  &::after {
+    content: "💀";
+    background: black;
+    padding-block: 0.25rem;
+  }
 }
-</style>
-
-> They can be animated easily.
+```
 
 ```css
 .fancy-underline {
@@ -71,6 +58,42 @@ The [::before] and [::after] pseudo elements can be added to any element using C
     &:hover::after { width: 100%; }
 }
 ```
+
+
+<div class="demo">
+    <div class="surrounded">div.surrounded</div>
+</div>
+
+<style>
+.surrounded {
+    &::before, &::after { background-color: yellow; }
+    &::before { content: "before "; }
+    &::after { content: " after"; }
+}
+</style>
+
+
+<div class="demo">
+    <div class="surrounded2">
+        <span>1<sup>st</sup> span</span>
+        <span>2<sup>nd</sup> span</span>
+    </div>
+</div>
+
+<style>
+.surrounded2 {
+    display: grid;
+    grid-template-rows: auto auto;
+    grid-template-columns: auto auto;
+    place-content: center;
+    &::before, &::after {
+        content: "💀";
+        background: black;
+        padding-block: 1rem;
+    }
+}
+</style>
+
 
 <div class="demo spaced">
     <div class="fancy-underline">div.fancy-underline</div>
@@ -110,26 +133,26 @@ The [::before] and [::after] pseudo elements can be added to any element using C
         &::before, &::after { width: 100%; }
     }
 }
+
 .fancy-underline3 {
     display: grid;
-    grid-template-columns: 1em 1fr 1em;
-    justify-content: center;
-    /* transition: 1300ms; */
+    grid-template-columns: auto max-content auto;
+    place-content: center;
+    place-items: center;
+    gap: 0.5ch;
     &::after, &::before {
-        background-color: transparent;
-        transition: translate 500ms, rotate 500ms, background-color 1000ms;
         content: "";
-        justify-self: center;
-        width: 100%;
-        height: 3px;
+        aspect-ratio: 1;
+        width: 1ch;
+        transition: background-color 400ms;
+        animation: spin 1s infinite linear;
     }
     &:hover {
-        &::after, &::before { background-color: green; }
-        &::after { translate: -2em 0.5em; rotate: -0.25turn;}
-        &::before { translate: 2em 0.5em; rotate: 0.25turn;}
+        &::after, &::before { background: var(--clr-primary-button); }
     }
 }
+@keyframes spin { 100% { rotate: 1turn; }}
 </style>
 
-[::before]: https://developer.mozilla.org/en-US/docs/Web/CSS/::before
-[::after]: https://developer.mozilla.org/en-US/docs/Web/CSS/::after
+[`::before`]: https://developer.mozilla.org/en-US/docs/Web/CSS/::before
+[`::after`]: https://developer.mozilla.org/en-US/docs/Web/CSS/::after
