@@ -1,6 +1,7 @@
 ---
 type: exercise
 title: Metropolitan museum of art application
+author: Dr Graeme Stuart
 ---
 
 In this exercise we will develop an application for exploring the *Metropolitan Museum of Art* collection via the published JSON API.

@@ -19,6 +19,7 @@ slides:
     - slides/baseline-limited-availability.md
     - slides/progressive-enhancement.md
     - slides/summary.md
+author: Dr Graeme Stuart
 ---
 
 The web moves fast, browsers not so much

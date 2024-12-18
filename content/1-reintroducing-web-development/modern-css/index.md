@@ -2,6 +2,7 @@
 title: Modern CSS features
 type: exercise
 weight: 30
+author: Dr Graeme Stuart
 ---
 
 In this exercise we will explore some important CSS features introduced more recently.
