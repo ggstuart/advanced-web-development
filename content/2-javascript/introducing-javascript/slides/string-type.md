@@ -1,7 +1,7 @@
 ---
 title: Strings
 type: slide
-classes: [even, p-burger, both-gap]
+classes: [one-two, p-burger, both-gap]
 ---
 
 [String](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String) *literals* are specified by single or double quotes.

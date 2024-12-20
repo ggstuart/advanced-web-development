@@ -160,3 +160,7 @@
 .arrays .content {
     grid-template-rows: min-content 1fr 1fr 1fr 1fr;
 }
+
+.conditionals .content .highlight:last-of-type {
+    grid-column: span 2;
+}
