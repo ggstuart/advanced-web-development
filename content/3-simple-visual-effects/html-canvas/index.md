@@ -1,7 +1,7 @@
 ---
 title: HTML Canvas
 type: exercise
-weight: 20
+weight: 30
 author: Dr Graeme Stuart
 ---
 
