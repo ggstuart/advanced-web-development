@@ -1,0 +1,50 @@
+[
+    {
+        "picsumId": 1032,
+        "title": "crater",
+        "description": "An impact crater is an approximately circular depression in the surface of a planet, moon, or other solid body in the Solar System or elsewhere, formed by the hypervelocity impact of a smaller body.",
+        "featured": true
+    },
+    {
+        "picsumId": 103,
+        "title": "feet",
+        "description": "The foot (plural: feet) is an anatomical structure found in many vertebrates. It is the terminal portion of a limb which bears weight and allows locomotion. In many animals with feet, the foot is a separate organ at the terminal part of the leg made up of one or more segments or bones, generally including claws or nails."
+    },
+    {
+        "picsumId": 1039,
+        "title": "waterfall",
+        "description": "A waterfall is an area where water flows over a vertical drop or a series of steep drops in the course of a stream or river. Waterfalls also occur where meltwater drops over the edge of a tabular iceberg or ice shelf."
+    },
+    {
+        "picsumId": 1069,
+        "title": "jellyfish",
+        "description": "Jellyfish and sea jellies are the informal common names given to the medusa-phase of certain gelatinous members of the subphylum Medusozoa, a major part of the phylum Cnidaria. Jellyfish are mainly free-swimming marine animals with umbrella-shaped bells and trailing tentacles, although a few are anchored to the seabed by stalks rather than being mobile.",
+        "featured": true
+    },
+    {
+        "picsumId": 1074,
+        "title": "lion",
+        "description": "The lion (Panthera leo) is a species in the family Felidae and a member of the genus Panthera. It has a muscular, deep-chested body, short, rounded head, round ears, and a hairy tuft at the end of its tail."
+    },
+    {
+        "picsumId": 1080,
+        "title": "strawberries",
+        "description": "The garden strawberry (or simply strawberry; Fragaria × ananassa) is a widely grown hybrid species of the genus Fragaria, collectively known as the strawberries, which are cultivated worldwide for their fruit."
+    },
+    {
+        "picsumId": 1084,
+        "title": "walrus",
+        "description": "The walrus (Odobenus rosmarus) is a large flippered marine mammal with a discontinuous distribution about the North Pole in the Arctic Ocean and subarctic seas of the Northern Hemisphere. The walrus is the only living species in the family Odobenidae and genus Odobenus."
+    },
+    {
+        "picsumId": 250,
+        "title": "camera",
+        "description": "A camera is an instrument used to capture and store images and videos, either digitally via an electronic image sensor, or chemically via a light-sensitive material such as photographic film. The invention of the camera dates back to the 19th century and has since evolved with advancements in technology, leading to a vast array of types and models in the 21st century.",
+        "featured": true
+    },
+    {
+        "picsumId": 261,
+        "title": "dune",
+        "description": "A dune is a landform composed of wind- or water-driven sand. It typically takes the form of a mound, ridge, or hill. Dunes occur in different shapes and sizes, but most kinds of dunes are longer on the stoss (upflow) side, where the sand is pushed up the dune, and have a shorter slip face in the lee side. The valley or trough between dunes is called a dune slack."
+    }
+]

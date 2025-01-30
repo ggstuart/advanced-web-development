@@ -1,0 +1,27 @@
+[
+    {
+        "title": "This is an article",
+        "content": [
+            "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nam autem rem quam unde sed laboriosam fugiat quo veritatis facilis tenetur.",
+            "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nam autem rem quam unde sed laboriosam fugiat quo veritatis facilis tenetur."
+        ],
+        "picsumId": 1,
+        "featured": true
+    },
+    {
+        "title": "This is another article",
+        "content": [
+            "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nam autem rem quam unde sed laboriosam fugiat quo veritatis facilis tenetur.",
+            "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nam autem rem quam unde sed laboriosam fugiat quo veritatis facilis tenetur."
+        ],
+        "picsumId": 10
+    },
+    {
+        "title": "This is a third",
+        "content": [
+            "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nam autem rem quam unde sed laboriosam fugiat quo veritatis facilis tenetur.",
+            "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nam autem rem quam unde sed laboriosam fugiat quo veritatis facilis tenetur."
+        ],
+        "picsumId": 100
+    }
+]

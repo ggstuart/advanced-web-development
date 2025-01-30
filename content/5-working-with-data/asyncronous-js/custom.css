@@ -1,0 +1,59 @@
+.creation .content {
+    grid-template-columns: 2fr 4fr 1fr;
+}
+
+.promises .content {
+    grid-template-rows: auto 1fr auto;
+    img {
+        max-width: 95%;
+    }
+}
+
+.promise-example .content {
+    >.highlight:nth-of-type(2) {
+        grid-row: span 2;
+    }
+}
+
+.apis .content {
+    grid-template-rows: 1fr min-content 1fr min-content 1fr;
+}
+
+.rest .content,
+.api-examples .content {
+    grid-template-rows: auto 1fr auto;
+    > table {
+        font-size: 1.5em;
+        border-collapse: collapse;
+    
+        tr {
+            background: var(--clr-primary-button);
+            color: var(--clr-button-text);
+    
+            th {
+                font-weight: bold;
+            }
+    
+            th,
+            td {
+                border: 2px solid var(--clr-button-text);
+                padding: 0.25rem 0.5rem;
+            }
+        }
+        a {
+            color: inherit;
+            font-size: 0.9em;
+        }
+    }
+}
+
+.api-documentation .content {
+    >p:first-of-type,
+    >p:last-of-type {
+        grid-column: 1 / -1;
+    }
+}
+
+.highlight {
+    align-content: center;
+}

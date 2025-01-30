@@ -1,0 +1,149 @@
+body {
+    margin: 0;
+    background: hsl(100, 20%, 90%);
+    color: hsl(100, 50%, 10%);
+    font-family: system-ui;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    min-height: 100dvh;
+    
+    >header,
+    >footer,
+    >main>section {
+        padding-inline: 1rem;
+    }
+    
+    >main p {
+        max-width: 70ch;
+        line-height: 1.4;
+    }
+    
+    >header,
+    >footer {
+        background: hsl(100, 20%, 80%);
+        display: flow-root;
+    }
+    
+    >footer {
+        color: hsl(100, 20%, 30%);
+        text-align: right;
+    }
+}
+
+ul.grid {
+    padding: 0;
+    list-style: none;
+    display: grid;
+    gap: 2rem;
+    grid-auto-flow: dense;
+
+    li:has(.featured) {
+        border-radius: 5px;
+        outline: 5px solid hsl(100, 20%, 30%);
+    }
+
+    @media (width > 600px) {
+        li:has(.featured) {
+            grid-template-columns: subgrid;
+            grid-column: span 2;
+        }
+    }
+
+    @media (width > 700px) {
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    }
+ 
+    @media (width > 1200px) {
+        grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    }
+}
+
+*:has(>figure.my-component) {
+    container-type: inline-size;
+    
+    figure.my-component {
+        height: 100%;
+        margin: 0;
+        background: white;
+        border-radius: 5px;
+        overflow: hidden;
+        box-shadow: 0 0 5px 0 black;
+        font-size: 0.9em;
+
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: min-content auto;
+
+        >img {
+            width: 100%;
+            object-fit: cover;
+            aspect-ratio: 1;
+        }
+        
+        >figcaption {
+            padding: 1rem;
+            display: grid;
+            place-content: start center;
+            p, h2 { margin-block: 0.25rem; }
+        }
+        @container (width>350px) {
+            font-size: 1em;
+
+            @container (width<500px) {
+                grid-template-rows: auto;
+                grid-template-columns: auto;
+                >img,
+                >figcaption {
+                    grid-column: 1;
+                    grid-row: 1;
+                }
+                
+                >figcaption {
+                    transition: 400ms;
+                    backdrop-filter: brightness(0.5) contrast(0.5);
+                    color: white;
+                    /* text-align: center; */
+                    align-self: end;
+                }
+                &:hover {
+                    >figcaption {
+                        opacity: 0;
+                    }
+                }
+            }
+        }
+
+        /* larger sizes */
+        @container (width>=500px) {
+            grid-template-rows: 1fr;
+            grid-template-columns: 200px auto;
+            >img {
+                height: 100%;
+            }
+        }
+
+    }
+    figure.my-component.featured {
+        figcaption h2 {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            &::after {
+                font-size: 0.6em;
+                color: #999;
+                content: "featured article";
+            }
+        }
+        @media (width > 600px) {
+            grid-template-columns: subgrid;
+            font-size: 1.4em;
+            >img {
+                grid-column: 1;
+            }
+            > figcaption {
+                grid-column: 2;
+                padding: 1.5rem;
+            }
+        }
+    }
+}
