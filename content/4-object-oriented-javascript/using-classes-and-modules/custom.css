@@ -1,0 +1,7 @@
+.tight .content > p {
+    margin-block: 0;
+}
+
+.slide .content iframe {
+    height: revert-layer;
+}
