@@ -1,14 +1,15 @@
 :root {
-    --clr-background: hsl(285, 10%, 15%);
-    --clr-background2: hsl(285, 10%, 5%);
+    --clr-background: hsl(285, 10%, 20%);
     --clr-text: hsl(285, 5%, 95%);
     --clr-slide-background: #fff;
     --clr-slide-text: #000;
     --clr-primary-button: hsl(135, 40%, 40%);
-    --clr-secondary-button: hsl(135, 10%, 20%);
     --clr-button-text: hsl(135, 40%, 95%);
     --clr-accent: hsl(25, 90%, 50%);
-    --clr-accent2: hsl(25, 90%, 40%);
     --clr-accent-text: hsl(25, 80%, 95%);
+    
+    --clr-secondary-button: hsl(from var(--clr-primary-button) h 10% calc(l - 20));
+    --clr-background2: hsl(from var(--clr-background) h s calc(l - 10));
+    --clr-accent2: hsl(from var(--clr-accent) h s calc(l - 10));
 }
 
