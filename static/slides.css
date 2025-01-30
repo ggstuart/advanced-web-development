@@ -179,7 +179,9 @@ iframe:focus {
 .small-code .highlight {
     font-size: 0.9em;
 }
-
+.tiny-code .highlight {
+    font-size: 0.8em;
+}
 .centered-code .highlight {
     align-content: center;
 }
