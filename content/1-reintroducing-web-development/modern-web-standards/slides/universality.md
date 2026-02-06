@@ -10,3 +10,9 @@ classes: [big-quote]
 >
 > *Tim Berners-Lee*, December 2010<br> 
 > 20th anniversary of the birth of the web
+
+
+Read [Resilient Web Design](https://resilientwebdesign.com/introduction/)
+by [Jeremy Keith](https://adactio.com/).
+
+> The web continues to evolve, by design.

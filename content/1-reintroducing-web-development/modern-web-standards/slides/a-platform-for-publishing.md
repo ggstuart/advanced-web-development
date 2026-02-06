@@ -4,8 +4,7 @@ type: slide
 classes: [platform, nice-p]
 ---
 
-> Read [Resilient Web Design](https://resilientwebdesign.com/introduction/)
-by [Jeremy Keith](https://adactio.com/).
+> This is the original proposal for the world wide web 
 
 ![A copy of the original proposal for the world-wide web, written by Tim Berners-Lee. The words "Vague byt exciting..." are written in pen at the top of the page](https://resilientwebdesign.com/chapter1/images/large/vague-but-exciting.jpg)
 

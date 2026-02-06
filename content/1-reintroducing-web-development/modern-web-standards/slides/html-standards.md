@@ -1,5 +1,5 @@
 ---
-title: Web Standards
+title: HTML Standards
 type: slide
 classes: [auto-one-one-auto, both-gap]
 ---
