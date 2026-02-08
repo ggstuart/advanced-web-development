@@ -1,7 +1,7 @@
 ---
 title: Responsive design
 type: slide
-classes: [responsive]
+classes: [responsive, contain]
 ---
 
 ![responsive design](./images/amiresponsive.png)

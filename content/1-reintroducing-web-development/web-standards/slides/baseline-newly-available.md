@@ -1,7 +1,7 @@
 ---
 title: Baseline - newly available
 type: slide
-classes: [block-burger, baseline, nice-p]
+classes: [burger, contain, baseline, nice-p]
 ---
 
 > [CanIuse](https://caniuse.com/mdn-css_at-rules_container) shows that the [`@container`](https://developer.mozilla.org/en-US/docs/Web/CSS/@container) at-rule is supported by **90.97%** of users.

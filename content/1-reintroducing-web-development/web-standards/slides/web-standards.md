@@ -1,7 +1,7 @@
 ---
 title: Web Standards
 type: slide
-classes: [even, block-burger]
+classes: [even, burger]
 ---
 
 > Web standards evolve through a collaborative process.

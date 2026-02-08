@@ -1,7 +1,7 @@
 ---
 title: HTML and CSS are decoupled
 type: slide
-classes: [block-burger, zen]
+classes: [burger, zen]
 ---
 
 > Remember CSS Zen Garden?

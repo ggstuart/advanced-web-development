@@ -1,0 +1,14 @@
+.plain-form {
+    form {
+        place-self: center;
+        padding: 1rem;
+        border: 0.5px solid black;
+        * {
+            background: initial;
+            color: inherit;
+            scale: 1;
+            font-size: inherit;
+            /* border: initial */
+        }
+    }
+}

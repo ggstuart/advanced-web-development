@@ -1,7 +1,7 @@
 ---
 title: Baseline - widely available
 type: slide
-classes: [block-burger, baseline, nice-p]
+classes: [burger, contain, baseline, nice-p]
 ---
 
 > CanIuse shows that `border-radius` is supported by **97.01%** of users.

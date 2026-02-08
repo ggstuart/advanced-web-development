@@ -1,7 +1,7 @@
 ---
 title: Resilient at the core
 type: slide
-classes: [even, block-burger, h-gap, nice-p]
+classes: [even, block-burger, both-gap, nice-p]
 ---
 
 >Browsers are specifically able to ignore unfamiliar elements.

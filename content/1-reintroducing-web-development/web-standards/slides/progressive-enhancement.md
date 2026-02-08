@@ -1,7 +1,7 @@
 ---
 title: Progressive enhancement
 type: slide
-classes: [even, block-burger, progressive, h-gap]
+classes: [even, burger, progressive, h-gap]
 ---
 
 > for example, `border-radius` was gradually introduced over many years.
@@ -34,9 +34,9 @@ section {
 }
 ```
 
-Using the `@supports` rule is a neat way to add more complex styles.
+>Using the `@supports` rule is a neat way to add more complex styles.
 
-In this case, the `margin` would only be added if `border-radius` is supported.
+>In this case, the `margin` would only be added if `border-radius` is supported.
 
 
 > *"Of course this means that the resulting website will look different in different browsers. Some people will see rounded corners. Others won’t. And that’s okay."*<br> - **Jeremy Keith**, Resilient Web Design

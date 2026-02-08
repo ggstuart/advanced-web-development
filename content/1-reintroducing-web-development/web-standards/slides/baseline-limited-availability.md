@@ -1,7 +1,7 @@
 ---
 title: Baseline - limited availability
 type: slide
-classes: [block-burger, baseline, nice-p]
+classes: [burger, contain, baseline, nice-p]
 ---
 
 > [CanIuse](https://caniuse.com/mdn-css_at-rules_starting-style) shows that the [`@starting-style`](https://developer.mozilla.org/en-US/docs/Web/CSS/@starting-style) at-rule is supported by **82.18%** of users.

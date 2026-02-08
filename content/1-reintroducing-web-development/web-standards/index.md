@@ -4,6 +4,8 @@ type: lecture
 weight: 1
 slides:
     - slides/a-platform-for-publishing.md
+    - slides/http.md
+    - slides/url.md
     - slides/universality.md
     - slides/web-standards.md
     - slides/html-standards.md
