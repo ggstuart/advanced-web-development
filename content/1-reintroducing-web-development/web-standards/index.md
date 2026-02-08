@@ -1,7 +1,7 @@
 ---
-title: Modern Web Standards
+title: Web Standards
 type: lecture
-weight: 10
+weight: 1
 slides:
     - slides/a-platform-for-publishing.md
     - slides/universality.md
