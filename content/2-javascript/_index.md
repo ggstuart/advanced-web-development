@@ -4,15 +4,34 @@ type: unit
 weight: 20
 ---
 
-Using JavaScript to modify the DOM in response to user interaction turns a simple website into a web application, even without a back-end.
+Creating a web server with JavaScript is simple, structuring one is not.
 
 <!--more-->
 
-When the browser parses HTML and constructs the DOM, it can also load scripts.
-Scripts have complete power over the webpage, converting a static DOM into a dynamic user interface.
+Expanding from a very basic web server to a fully featured web application requires carefully structured code.
 
 ```js
-console.log("Hello world!!")
+Deno.serve(request => {
+    const html = `
+    <!DOCTYPE html>
+    <html lang="en">
+        <head>
+            <title>My Web Application</title>
+        </head>
+        <body>
+            <header>
+                <h1>My Web Application</h1>
+            </header>
+            <main>
+                <h2>Home page</h2>
+                <p>This is the home page!</p>
+            </main>
+        </body>
+    </html>`;
+    const headers = new Headers({"content-type": "text/html"});
+    return new Response(html, { headers });
+})
 ```
 
-A web page is more fun with JavaScript.
+JavaScript can also be used in the browser to manipulate the Document Object Model and to make HTTP requests. 
+A web application is more fun with JavaScript.
