@@ -1,7 +1,7 @@
 ---
 title: Introducing JavaScript
 type: lecture
-weight: 10
+weight: 1
 author: Dr Graeme Stuart
 slides:
     - slides/not-java.md
