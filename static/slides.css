@@ -67,6 +67,22 @@
 
 .slide:not(.title) {
 
+    &.img-50vh p:has(img) img {
+        max-height: 50vh;
+    }
+
+    &.img-center p:has(img) img {
+        object-position: center;
+    }
+
+    &.img-40vh p:has(img) img {
+        max-height: 40vh;
+    }
+
+    &.img-25vh p:has(img) img {
+        max-height: 25vh;
+    }
+
     &.contain p:has(img) img {
         object-fit: contain;
         object-position: center;
@@ -154,9 +170,12 @@
     &.h-gap .content {
         gap: 2px 0;
     }
-    
-    &.both-gap .content {
-        gap: 2px;
+
+    &.gap,
+    &.both-gap { 
+        .content {
+            gap: 2px;
+        }
     }
     
     &.burger .content {
@@ -187,7 +206,7 @@
     
     &.big-quote .content {
         blockquote {
-            font-size: 1.6em;
+            font-size: 1.5em;
         }
     }
         

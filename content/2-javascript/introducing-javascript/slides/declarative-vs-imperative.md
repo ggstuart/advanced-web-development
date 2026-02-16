@@ -1,7 +1,7 @@
 ---
 title: Declarative vs Imperative
 type: slide
-classes: [even, nice-p, big-quote, v-gap, declarative]
+classes: [even, gap, declarative]
 ---
 
 > HTML and CSS are declarative

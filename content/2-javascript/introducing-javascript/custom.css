@@ -10,29 +10,37 @@
     }
 }
 
+article.slide:not(.title) {
 
-.brendan .content {
-
-    @media (width>500px) {
-        /* grid-template-columns: 1fr 1fr; */
-        grid-template-rows: 3fr 2fr auto;
-    }
-
-    p:has(img) {
-        grid-column: span 2;
-    }
-
-    p img {
-        aspect-ratio: 8;
-        object-position: center;
+    &.brendan .content {
+    
+        @media (width>500px) {
+            /* grid-template-columns: 1fr 1fr; */
+            grid-template-rows: 3fr 2fr auto;
+        }
+    
+        p:has(img) {
+            grid-column: span 2;
+            img {
+                aspect-ratio: 3.6;
+                object-position: center;
+                /* object-fit: contain; */
+            }
+        }
+    
     }
 }
 
 
 .ecma .content {
 
+    ul {
+        font-size: 1.3em;
+        display: grid;
+        gap: 1em;
+    }
     img {
-        aspect-ratio: 1.5;
+        /* aspect-ratio: 1.5; */
         object-position: center;
         display: none;
     }
