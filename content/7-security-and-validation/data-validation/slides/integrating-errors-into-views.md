@@ -5,7 +5,7 @@ title: Integrating errors into views
 
 > The form integrates errors using [optional chaining](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Optional_chaining).
 
-```js {hl_lines=["16-17", "19-20"]}
+```js {hl_lines=[6, "13-14", "16-17"]}
 function itemToHTML(item) {
     return `<li><span class="label">${item.label}</span>
         <span>Due ${item.due.toLocaleDateString("en-gb", fmt)}</span>
