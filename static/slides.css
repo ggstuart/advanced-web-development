@@ -106,8 +106,6 @@
             grid-template-columns: 1fr 2fr 2fr;
         }
     }
-
-
     
     &.one-three .content {
         @media (width > 500px) {
@@ -223,6 +221,12 @@
     }
     &.medium-image .content p img {
         max-height: 50dvh;
+    }
+
+    &.tight-quotes .content {
+        blockquote p {
+            margin-block: 0.25em;
+        }
     }
 }
 
