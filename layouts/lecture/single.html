@@ -9,6 +9,10 @@
 {{define "bodyAttributes"}} class="presentation"{{end}}
 
 {{ define "main" }}
+  {{ range .Page.Resources.Match "**.html" }}
+    {{ (.Content | resources.FromString .Path).Publish }}
+  {{ end }}
+
   <article class="slide title current" aria-label="{{.Title}}">
     <h2>{{.Title}}</h2>
     {{partial "logo.html" .}}
