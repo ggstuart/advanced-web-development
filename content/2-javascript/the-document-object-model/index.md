@@ -4,6 +4,7 @@ type: lecture
 weight: 20
 author: Dr Graeme Stuart
 slides:
+    - slides/linking-scripts.md
     - slides/hello-world.md
     - slides/document.md
     - slides/querySelector.md
