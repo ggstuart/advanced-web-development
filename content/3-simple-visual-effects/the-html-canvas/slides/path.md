@@ -7,8 +7,8 @@ classes: [paths, p-burger, both-gap]
 
 
 ```js
-ctx.moveTo(200, 80);
-ctx.lineTo(200, 50);
+ctx.moveTo(100, 80);
+ctx.lineTo(100, 50);
 // ctx.stroke();
 ```
 
@@ -19,7 +19,7 @@ ctx.lineTo(200, 50);
 
 
 ```js
-ctx.arc(200, 30, 20, 0, 2 * Math.PI);
+ctx.arc(100, 30, 20, 0, 2 * Math.PI);
 // ctx.stroke();
 ```
 
@@ -32,7 +32,7 @@ ctx.arc(200, 30, 20, 0, 2 * Math.PI);
 ```js
 ctx.stroke();
 ctx.beginPath();
-ctx.arc(200, 30, 20, 0, 2 * Math.PI);
+ctx.arc(100, 30, 20, 0, 2 * Math.PI);
 // ctx.stroke();
 ```
 
@@ -42,8 +42,8 @@ ctx.arc(200, 30, 20, 0, 2 * Math.PI);
 
 
 ```js
-ctx.moveTo(180, 130);
-ctx.quadraticCurveTo(200, 30, 220, 130);
+ctx.moveTo(80, 130);
+ctx.quadraticCurveTo(100, 30, 120, 130);
 // ctx.stroke();
 ```
 
@@ -52,8 +52,8 @@ ctx.quadraticCurveTo(200, 30, 220, 130);
 > In most cases we can simply create a `subpath` using `moveTo`.
 
 ```js
-ctx5.moveTo(180, 80);
-ctx5.quadraticCurveTo(200, 30, 220, 80);
+ctx5.moveTo(80, 80);
+ctx5.quadraticCurveTo(100, 30, 120, 80);
 ctx.stroke();
 ```
 
