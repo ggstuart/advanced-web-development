@@ -18,11 +18,7 @@ slides:
     - slides/chaining.md
     - slides/await.md
     - slides/await-example.md
-    
-    - slides/async-await.md
-    - slides/patterns.md
-    - slides/examples.md
-    - slides/observers.md
+    - slides/request.md
     
 ---
 
