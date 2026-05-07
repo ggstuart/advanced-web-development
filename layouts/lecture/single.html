@@ -12,24 +12,21 @@
   {{ range .Page.Resources.Match "**.html" }}
     {{ (.Content | resources.FromString .Path).Publish }}
   {{ end }}
-
-  <article class="slide title current" aria-label="{{.Title}}">
+  <article class="slide title" aria-label="{{.Title}}">
     <h2>{{.Title}}</h2>
     {{partial "logo.html" .}}
     <h3>{{ .Content }}</h3>
     {{ with .Params.Author}}<small>{{.}}</small>{{end}}
   </article>
-
-  {{/*  loop over slides, capture index as well */}}
+  {{/* loop over slides, capture index as well */}}
   {{ range $index, $slide := .Params.Slides}}
-    {{/*  get the actual slide resource  */}}
+    {{/* get the actual slide resource */}}
     {{with $.Resources.Get $slide}}
-      {{/*  add one to the index and pass in as slideNumber */}}
+      {{/* add one to the index and pass in as slideNumber */}}
       {{$slideNumber := (add $index 1)}}
-      {{ partial "slide/single.html" (dict "page" . "slideNumber" $slideNumber) }}
+      {{ partial "slide.html" (dict "page" . "slideNumber" $slideNumber) }}
     {{end}}
   {{ end }}
-
   <article class="slide title" aria-label="questions?">
     <h2>{{.Title}}</h2>
     {{partial "logo.html" .}}
@@ -39,7 +36,6 @@
       {{ with .Params.Author}}<br><small>{{.}}</small>{{end}}
     </p>
   </article>
-
 {{ end }}
 
 {{ define "footer" }}
