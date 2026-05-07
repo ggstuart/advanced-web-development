@@ -1,7 +1,10 @@
 baseURL = 'https://ggstuart.github.io/advanced-web-development'
-languageCode = 'en-us'
 theme = 'module'
 title = 'Advanced Web Development'
+
+[languages]
+    [languages.en]
+        locale = "en-gb"
 
 
 [markup]
@@ -12,7 +15,7 @@ title = 'Advanced Web Development'
             unsafe = true
         [markup.goldmark.renderHooks]
             [markup.goldmark.renderHooks.link]
-                enableDefault = true
+                useEmbedded = "fallback"
 
 [params]
     moduleName = 'Advanced Web development'
