@@ -1,0 +1,5 @@
+article.slide:not(.title) {
+    &.metmuseum .content {
+        grid-template-rows: auto 1fr auto;
+    }
+}
